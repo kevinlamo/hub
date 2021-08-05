@@ -14,7 +14,7 @@
 /*------------------ LOGIN -------------------*/
 
 $username="covid";
-$password="69";
+$password="horny69";
 $email="horny69@gmail.com";
 
 /*------------------ Login Data End ----------*/
